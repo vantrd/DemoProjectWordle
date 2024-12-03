@@ -1,12 +1,14 @@
-body {
-    font-family; Arial, Helvetica, sans-serif;
+/* body {
+    font-family: "Arial", "Helvetica", "sans-serif";
     display: flex;
     flex-direction: column;
     align-items: center;
+    display: grid;
+    justify-content: center;
     justify-content:center;
     height: 100vh;
     margin: 0;
-    background-color: #f8f8f8;
+    background-color:#AFDBF5;
 }
 
 h1 {
@@ -14,10 +16,20 @@ h1 {
     margin-bottom: 20px; 
 }
 
-form [
+form {
     margin-bottom: 20px;
-]
+}
 
+.wordle_page {
+    display: grid;
+    justify-content: center;
+    margin: bottom 10px;
+}
+.index_page {
+    display: grid;
+    justify-content: center;
+    margin: bottom 10px;
+}
 .letter-boxes {
     display:flex;
     justify-content:space-around;
@@ -50,26 +62,121 @@ button{
 }
 
 .correct{
-    background-color: green;
+    background-color: #E0FFFF;
     color: white;
 }
 
 .present{
-    background-color: yellow;
-    color: black;
+    background-color: #eec0c8;
+    color: #81D8D0;
 }
 
 .absent{
-    background-color: grey;
+    background-color: #F0F8FF;
     color:white;
 }
 
 .error-message{
-    color:green;
+    color:#F9629F;
 }
 
 .header {
-    color: green
+    color: peachpuff
+}
+
+.button-link{
+    background-color: lightblue;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: aliceblue;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-link:hover{
+    background-color: pink;
+
+
+} */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* display: grid; 
+    justify-content: center;*/
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa;
+}
+
+
+form {
+    margin-bottom: 20px;
+}
+.wordle_page {
+    display: grid;
+    justify-content: center;
+}
+
+.letter-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px; 
+}
+
+.letter-input {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 2rem;
+    border: 2px solid #ddd;
+    margin: 0 5px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.feedback span{
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 50px;
+    text-align: center;
+}
+
+
+.correct {
+    background-color: green;    
+    color: white;
+}
+
+.present {
+    background-color: yellow;
+    color: black;
+}
+
+.absent {
+    background-color: grey;
+    color: white;
+}
+
+.error-message {    
+    color: red;
+}
+
+.success-message {
+    color: green;
 }
 
 .button-link{

@@ -3,47 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link ref="stylesheet" href = "{{ url_for('static', filename = 'styles.css') }}">
+        <link rel="stylesheet" href = "{{ url_for('static', filename = 'styles.css') }}">
         <title>My Portfolio</title>
     </head>
     <body>
         <section class = "header">
-            <img src="{{url_for('static', filename='logoAlgo2022-2023.png')}}" />
+            <img src="{{url_for('static', filename='a.jpeg')}}" width="50px", height="50px"/>
             <!-- This is for your name and an image of you -->
+             <h1>My name is Van Anh</h1>
         </section>
 
         <section class = "info">
             <!-- This is for other information about you -->
             <a  href = "{{url_for('wordle_page')}}" class = "button-link" >Next Page</a>
+            <p>I play volleyball and basketball</p>
+            <p>I like to sleep</p>
+            <p>My favourite subject is English</p>
         
         </section>
 
         <footer>
             <!-- Your contact information (make it up dont use ur real one) -->
-        </footer>
-    </body>
-</html><!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link ref="stylesheet" href = "{{ url_for('static', filename = 'styles.css') }}">
-        <title>My Portfolio</title>
-    </head>
-    <body>
-        <section class = "header">
-            <img src="{{url_for('static', filename='logoAlgo2022-2023.png')}}" />
-            <!-- This is for your name and an image of you -->
-        </section>
-
-        <section class = "info">
-            <!-- This is for other information about you -->
-            <a  href = "{{url_for('wordle_page')}}" class = "button-link" >Next Page</a>
-        
-        </section>
-
-        <footer>
-            <!-- Your contact information (make it up dont use ur real one) -->
+             <h6>My email: anything@gmail.com</h6>
+             <h6>My phone number: 32938493289</h6>
         </footer>
     </body>
 </html>
