@@ -5,7 +5,8 @@ import os
 
 leaderboard = []
 attempts = 1
-secret_word = ""
+secret_word = "pizza"
+word_id = 2
 if not os.path.exists("wordle.db"):
     database.make_datebase()
 WORDS = database.get_words()

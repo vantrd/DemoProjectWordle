@@ -195,3 +195,10 @@ button {
 .button-link:hover{
     background-color: aqua;
 }
+
+.leaderboard {
+    border: solid;
+    border-style: double;
+    border-color: black;
+    font-size: 13px;
+}

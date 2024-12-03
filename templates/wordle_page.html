@@ -1,39 +1,64 @@
 <!DOCTYPE html>
-<html> 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link ref="stylesheet" href = "{{ url_for('static', filename = 'styles.css') }}">
-        <title>Wordle Game</title>
-    </head>
-    <body class ="wordle_page">
-        <h1>Wordle Game</h1>
-        <form method = "POST" id = "world-form">
-            <div class = "letter-boxes">
-                {% for i in range(word_length) %}
-                    <input type = "text" name ="letter{{ i + 1}}" value="{{guess[i]}}" maxlength = "1" required class = "letter-input">
-                {% endfor %}
-            </div>
-            <button type = "submit">Submit</button>
-        </form>
-        {% if feedback %}
-            <div class = "feedback">
-                {% for result in feedback %}
-                    <span class = "{{result}}"> {{result}}</span>
-                {% endfor %}
-            </div>
-        {% endif %}
-    
-        {% if success %}
-            <div class = "success-message">
-                <p>You Made it</p>
-            </div>
-        {% elif error %}
-            <div class = "error-message">
-                <p>{{error}}</p>
-            </div>
-        {% endif %}
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class = "wordle-page">
+    <h1>Wordle Game</h1>
+    <form method = "POST", id = "wordle-form">
+        <div> 
+            <label for="name">Name:</label> <input type="text" id="name" name="name_input" required> 
+        </div>
+        <div class = "letter-boxes">
+            {% for i in range(word_length) %}
+                <input type = "text" name = "letter{{ i+1 }}" value = "{{guess[i]}}" maxlength= "1" required class = "letter-input">
+            {% endfor %}
+        </div>
         
-    </body>
+        <button type= "submit">Check</button>
+    </form>
+
+    {% if feedback %}
+        <div class = "feedback">
+            {% for result in feedback %}
+                <span class = "{{result}}">{{ result }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if success %}
+        <div class = "success-message">
+            <p>Congratulations! Your Guess today Word</p>
+        </div>
+    {% endif %}
+    
+    {% if error %}
+        <div class = "errror-message">
+            <p>{{error}}</p>
+        </div>
+    {% endif %}
+    
+    {% if leaderboard %}
+        <table class = "leaderboard">
+            <tr>
+                <td>Ranking Number</td>
+                <td>Player Name</td>
+                <td>Word They Guessed</td>
+                <td>Number of Attemps</td>
+            </tr>
+            {% for item in leaderboard %}
+                <tr>
+                    <td>{{ leaderboard.index(item) + 1 }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[3] }}</td>
+                    <td>{{ item[2] - 1 }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+</body>
 </html>
